@@ -1,0 +1,9 @@
+Crie um novo repositório na linha de comando:
+echo "# HandTe-c-stes" >> README.md 
+git init 
+git add README.md 
+git commit -m "first commit" 
+git branch -M main 
+git remote add origin https://github.com/Roza918/HandTe-c-stes.git
+git push -u origin main
+    
