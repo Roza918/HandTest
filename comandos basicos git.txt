@@ -4,9 +4,13 @@ Criação de repositórios:
 Git init - Iniciar ou reinicializar um repositório Git
 Git clone - Cria uma cópia local de um repositório existente
 
+Git add - Registrar arquivos para ser monitorado
+
 Fluxo de trabalho:
 Git pull - Busca e traz um arquivo do repositório
 Git push - Empurra e leva um arquivo para o repositório
 
+
 Do Git para o GitHub:
 git remote - serve para fazer ações em um repositório online
+ 
