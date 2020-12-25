@@ -1,0 +1,162 @@
+$ cd /home/roza/Documentos/Repositório
+$ git init
+$ git push 'Comandos Basicos Git.txt'
+    //Deu erro, ou seja, provavelmente o comando não funciona dessa forma!//
+$ git push 'Comandos Basicos Git.txt' master
+    error: src refspec master does not match any
+    error: failed to push some refs to 'Comandos Basicos Git.txt'
+    
+    //mais um erro, parece que também não é assim que funciona
+$ git push
+    //bora ler um pouco mais sobre o comando//
+    
+    //aparentemente não é assim que se lê sobre ashuahsuas//
+$ git push -h
+    // ok, muita informação, mas nada muito explicativo//
+$ git push 'Comandos Basicos Git.txt' .git
+    // não rolou tbm //
+$ git push --set-upstream 'comandos basicos git.txt'
+    fatal: invalid gitfile format: comandos basicos git.txt
+    fatal: Could not read from remote repository.
+
+    Please make sure you have the correct access rights and the repository exists. 
+
+    // Três coisas me chamaram atenção, "verificar se eu possuo o acesso ao repositório", "verificar se o repositório existe" e sim
+    ele existe mas só na minha máquina, e "não foi possível ler do repositório remoto", repositório remoto e a contestação do programa sobre
+    meu repositório de fato existir, talvez possa indicar que eu precise criar um repositório remoto pra dar pull, afinal... Pra onde eu estou
+    tentando empurrar o arquivo afinal? //
+
+$ git push 'comandos basicos git.txt' /home/roza/Documentos/repositorio
+    fatal: invalid refspec '/home/roza/Documentos/repositorio'  
+    
+    // De fato, acho que o comando push não serve pra nada dentro do repositório local e deve servir de fato apenas para empurrar arquivos
+    para um repositório online, ou "remote", o que pode ter um pouco de lógica //
+$ git add
+    // quero entender melhor esse comando, colocarei o que eu descobrir no arquivo "comandos basicos do git" //
+$ git add 'comandos basicos git.txt'
+    // o terminal simplesmente aceitou o comando e não retornou nada, acho que deu certo, agora meu repositório está monitorando esse arquivo? //
+$ git remote
+    // por influencias do artigo que o Israel me recomendou e pelas indicações que o comando "Git Pull" me deu nas suas mensagens de erros
+    eu decidi finalmente ceder e criar um repositório no GitHub, lá eles me indicaram algo envolvendo esse comando e quero ver o que ele faz,
+    o que eu descobrir eu coloco em 'comandos basicos git.txt' //
+
+$ git remote -h
+    // Queria descobrir mais coisas, enfim, vários comandos envolvendo renomeação de arquivos, deletar arquivos e óbviamente um kg de coisas
+    que não faço ideia do que é ainda //
+$ git remote add origin https://github.com/Roza918/HandTe-c-stes.git
+    // O github disse que ia funcionar, então eu fiz, o terminal também não retornou nada então vou considerar que deu certo, eu deveria 
+    considerar que deu certo? //
+$ git branch -M main
+    // o github também mandou eu fazer isso, agora estou mais curioso sobre as branchs e pelo pouco que eu entendi elas são 'galhos' do projeto
+    principal, tipo coisas em paralelo que ainda não estão prontas pra entrar no master, que eu acho que é o principal, bom, de qualquer forma
+    isso me indica que talvez a forma como eu esteja organizando esse repositório esteja muito zoado ahsuahsuhaus //
+$ git commit -m "first commit"
+    // O github também mandou e eu acho que commit se trata de atualizações pelo que entendi // 
+    // bom, o git me disse que ele quer saber quem eu sou antes de poder fazer a commit, será que eu tenho que ter uma certa intimidade com ele
+    antes de sair pedindo coisa? //
+$ git commit -m "first commit" gabriel.roza03@gmail.com
+    // informei quem eu sou mas ele disse que isso não bate com ninguém que ele conhece, acho que tenho que primeiro configurar meu email
+    nele //
+$ git config --global user.email "gabriel.roza03@gmail.com"
+    // ele aceitou, acho que consegui me cadastar como eu //
+$ git commit -m "first commit"
+    No ramo master
+
+    Submissão inicial.
+
+    Arquivos não monitorados:
+    (utilize "git add <arquivo>..." para incluir o que será submetido)
+    comandos basicos git.txt
+
+    nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+
+    // bom, ele deixou beeeem claro agr que eu preciso primeiro registar o arquivo com o git add ahsuhausas //
+$ git add 'comandos basicos git.txt'
+    // é isso, add, agr vai? //
+$ git commit -m "first commit"
+    [master (root-commit) 1e08281] first commit
+    1 file changed, 12 insertions(+)
+    create mode 100644 comandos basicos git.txt
+
+    // acho que isso quer dizer um sim :D //
+$ git branch -M main
+$ git push -u origin main
+    Missing or invalid credentials.
+    Error: socket hang up
+    at connResetException (internal/errors.js:570:14)
+    at Socket.socketOnEnd (_http_client.js:440:23)
+    at Socket.emit (events.js:228:7)
+    at endReadableNT (_stream_readable.js:1185:12)
+    at processTicksAndRejections (internal/process/task_queues.js:81:21) {
+    code: 'ECONNRESET'
+    }
+    ^@remote: Repository not found.
+    fatal: Authentication failed for 'https://github.com/Roza918/HandTe-c-stes.git/'
+
+    // ele pediu pra logar mas eu não consegui //
+$ git push -u origin main
+    // ok, depois de umas tentativas e erros, depois do Visual Studio abrir o GitHub no navegador e pedir permissão e vice versa e começar
+    a aparecer umas abinhas do github na barrinha inferior do Visual Studio code pra eu clicar e dar minhas credênciais e que eu demorei 
+    um tempinho pra perceber, finalmente eu consegui logar e acho que ta no ar :D //
+
+    // AEEEEEEEEEE, FOIII, MEU PRIMEIRO PUSH PRO REPOSITÓRIO NO GITHUB, mas felicidades a parte, por algum motivo só o arquivo
+    'comandos basicos git.txt' que entrou, o outro e esse não entraram, e aparentemente boa parte dessas coisas que estou 
+    escrevendo nesse relatório estão marcadas no meu VS code como "changes" enquanto a versão "staged" ta bem desatualizada, talvez seja
+    pq eu ainda não salvei o arquivo, vamos testar! //
+
+    // ok, salvei o arquivo e mesmo assim ele ta desatualizado no repositório local, vou ver se resolvo isso com algo envolvendo commit, add ou
+    push //
+$ git add 'mini tutoriais.txt'
+    // ele aceitou, mas mesmo assim continua desatualizado, agora as hipoteses são push, commit ou algum comando específico dentro do add //
+$ git push 'mini tutoriais.txt'
+    // Não funcionou, agora vamos de commit, comando que pra ser bem sincero eu não entendo muito bem como funciona ainda //
+$ git commit 'mini tutoriais.txt'
+    // ok, ACONTECEU ALGO MT LOUCO, abriu o um arquivo de texto dentro do Nano no meu terminal falando o seguinte: //
+
+    # Please enter the commit message for your changes. Lines starting
+    # with '#' will be ignored, and an empty message aborts the commit.
+    # No ramo main
+    # Please enter the commit message for your changes. Lines starting
+    # with '#' will be ignored, and an empty message aborts the commit. Your branch is up to date with 'origin/main'.
+
+    // ta, depois da euforia momentanea vamos parar e ler o que isso significa... Ta, ele ta dizendo que se eu tenho que escrever uma mensagem
+    descrevendo o que eu to mudando nesse commit, dizendo que o que ta em # não vai ser enviado e que se não tiver mensagem o commit vai ser
+    cancelado, QUE É PRA IMPEDIR PROGRAMADOR PREGUIÇOSO DE NÃO EXPLICAR O QUE ELE FEZ NA BENDITA COMMIT, pelo menos eu acho que serve pra isso
+    ashuashuahsuas //
+    // ok, agora que eu percebi que eu estava fazendo commit do 'mini tutoriais.txt' e não deste arquivo de relatório, e sinceramente?
+    Que sorte, pois por algum motivo quando eu dei o commit o 'mini tutoriais.txt' simplesmente desapareceu do reposositório local, o arquivo 
+    ainda existe, mas não consigo colocá-lo no repositório de volta //
+$ git add 'mini tutoriais.txt'
+$ git commit 'mini tutoriais.txt'
+    No ramo main
+    Seu ramo está à frente de 'origin/main' por 1 submissão.
+    (use "git push" to publish your local commits)
+
+    Changes not staged for commit:
+    (utilize "git add <arquivo>..." para atualizar o que será submetido)
+    (use "git restore <file>..." to discard changes in working directory)
+    modified:   comandos basicos git.txt
+
+    Arquivos não monitorados:
+    (utilize "git add <arquivo>..." para incluir o que será submetido)
+    historico de comandos roza.txt
+
+    nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+    // ta, vou tentar usar //git 
+$ git push 'mini tutoriais.txt'
+    fatal: invalid gitfile format: mini tutoriais.txt
+    fatal: Could not read from remote repository.
+
+    Please make sure you have the correct access rights and the repository exists.
+$ git push
+    // sem especificar nenhum documento, dei git push, e ao contrário de antes, quando ainda não estava cadastrado no GitHub, ele não deu erro, 
+    apenas aceitou o git push e o arquivo 'mini tutoriais.txt' que eu havia dado commit antes, foi enviado para o GitHub! Porém no repositório local ele ainda não 
+    está sendo considerado um arquivo dentro do repositório//
+$ git push
+    Everything up-to-date
+    // Todos os meus commits em dia! //
+$ git push 'historicos de comandos roza.txt'
+    // fiz isso pra testar e de fato não funcionou, acredito que o processo seja, da o init ou clone, loga na sua conta dentro do GitHub informando quem você é,
+    conecta com algum repositório através do comando "remote add origin <link>", faz o commit do arquivo que você modificou, e posteriormente da push nele pra 
+    ele entrar no repositório remoto //
+$ git commit 'historico de comandos roza.txt'
