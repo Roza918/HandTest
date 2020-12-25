@@ -160,3 +160,7 @@ $ git push 'historicos de comandos roza.txt'
     conecta com algum repositório através do comando "remote add origin <link>", faz o commit do arquivo que você modificou, e posteriormente da push nele pra 
     ele entrar no repositório remoto //
 $ git commit 'historico de comandos roza.txt'
+    // dei commit, ele aceitou, assim como o outro retirou o arquivo do repositório local, ainda não foi para o GitHub, mas acredito que assim
+    que eu dar Git Push ele vai empurrar isso pra lá //
+$ git push 
+    // Funcionou, agora eu tenho esse arquivo lá em cima
