@@ -12,5 +12,4 @@ Git push - Empurra e leva um arquivo para o repositório
 
 
 Do Git para o GitHub:
-git remote - serve para fazer ações em um repositório online
- 
+Git remote - serve para fazer ações em um repositório online
